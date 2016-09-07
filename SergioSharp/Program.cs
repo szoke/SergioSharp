@@ -10,6 +10,25 @@ namespace SergioSharp
     {
         static void Main(string[] args)
         {
+            PrintString();
+            DoFunStuffWithIntegers();
+        }
+
+        private static void PrintString()
+        {
+            Console.WriteLine("Hello World!");
+            Console.ReadLine();
+        }
+
+        private static void DoFunStuffWithIntegers()
+        {
+            int a = 4;
+            int b = 5;
+
+            int sum = a + b;
+            Console.WriteLine(sum);
+
+            Console.ReadLine();
         }
     }
 }
