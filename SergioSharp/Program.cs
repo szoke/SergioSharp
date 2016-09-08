@@ -12,6 +12,7 @@ namespace SergioSharp
         {
             PrintString();
             DoFunStuffWithIntegers();
+            DoFunStuffWithFloats();
         }
 
         private static void PrintString()
@@ -27,6 +28,33 @@ namespace SergioSharp
 
             int sum = a + b;
             Console.WriteLine(sum);
+
+            int intMax = int.MaxValue;
+            int intMin = int.MinValue;
+
+            // TODO: Különbség, szorzás, osztás, négyzetgyök, stb. a-val és b-vel
+            // TODO: Összeadás, különbség, szorzás, osztás, intMax-szal és intMin-nel
+
+            long c;
+
+            // TODO: Elolvasni a long dokumentációját. Segít-e, ha nem megy valami az intMax-szal?
+
+            Console.ReadLine();
+        }
+
+        private static void DoFunStuffWithFloats()
+        {
+            float a = 2f;
+            float b = 34.653f;
+
+            float sum = a + b;
+            Console.WriteLine(sum);
+
+            // TODO: Különbség, szorzás, osztás, négyzetgyök, stb.
+
+            Console.WriteLine(Math.Sqrt(a));
+
+            // TODO: Megnézni a többi metódust a Math osztályban. Elkezded írni, hogy 'Math.' és a Visual Studio feldobja a lehetőségeket.
 
             Console.ReadLine();
         }
