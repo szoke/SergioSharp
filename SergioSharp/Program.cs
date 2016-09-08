@@ -10,14 +10,30 @@ namespace SergioSharp
     {
         static void Main(string[] args)
         {
-            PrintString();
+            DoFunStuffWithStrings();
             DoFunStuffWithIntegers();
             DoFunStuffWithFloats();
         }
 
-        private static void PrintString()
+        private static void DoFunStuffWithStrings()
         {
-            Console.WriteLine("Hello World!");
+            // TODO: Kísérletezni stringekkel
+
+            string helloWorld = "Hello World!";
+            Console.WriteLine(helloWorld);
+
+            string cSharpIsGreat = "C# is great.";
+
+            // Két string összefűzése kétféleképp
+            string concatenatedString = helloWorld + cSharpIsGreat;
+            string concatenatedStringTwo = string.Concat(helloWorld, cSharpIsGreat);
+            Console.WriteLine("Az egyik konkatenált string: " + concatenatedString);
+            Console.WriteLine("A másik konkatenált string: " + concatenatedStringTwo);
+
+            // Substring kivágása
+            string subStringOne = helloWorld.Substring(3, 3);
+            Console.WriteLine(subStringOne);
+            
             Console.ReadLine();
         }
 
