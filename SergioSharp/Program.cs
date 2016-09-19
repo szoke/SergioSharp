@@ -14,6 +14,7 @@ namespace SergioSharp
             DoFunStuffWithIntegers();
             DoFunStuffWithFloats();
             DoFunStuffWithArrays();
+            DoFunWithClasses();
         }
 
         private static void DoFunStuffWithStrings()
@@ -34,7 +35,7 @@ namespace SergioSharp
             // Substring kivágása
             string subStringOne = helloWorld.Substring(3, 3);
             Console.WriteLine(subStringOne);
-            
+
             Console.ReadLine();
         }
 
@@ -108,6 +109,44 @@ namespace SergioSharp
             }
 
             // TODO: játszani for ciklusokkal
+
+            Console.ReadLine();
+        }
+
+        private static void DoFunWithClasses()
+        {
+            // Az osztály egy sablon, egy definíció
+            // Az objektum egy osztálynak egy példánya
+            // Egy osztályból tetszőleges számú példányt hozhatunk létre, amik egyedi azonosítóval fognak rendelkezni
+            // Itt 2 példányt hozunk a Player osztályból
+            Player playerOne = new Player();
+            Player playerTwo = new Player();
+
+            // A létrejött objektumok Player típusúak lesznek
+            // Az is operátorral megvizsgálhatjuk, hogy tényleg így van-e
+            Console.WriteLine("playerOne is Player: " + playerOne is Player);
+            Console.WriteLine("playerTwo is Player: " + playerTwo is Player);
+
+            // Nézzük meg, hogy a két példány "egyenlő-e" - Az eredmény false lesz, mert ezek más-más példányai a Player osztálynak
+            Console.WriteLine("playerOne.Equals(playerTwo): " + playerOne.Equals(playerTwo));
+
+            // A két példány hashCode-ja mutatja, hogy nem azonosak
+            Console.WriteLine("playerOne.GetHashCode(): " + playerOne.GetHashCode());
+            Console.WriteLine("playerTwo.GetHashCode(): " + playerTwo.GetHashCode());
+
+            // A harmadik példányt nem new kulcsszóval hoztuk létre, hanem értékül adtuk neki a playerOne-t
+            // Így továbbra is csak 2 objektumunk van, nem jött létre harmadik
+            // A kettőből az egyiket viszont innentől a playerOne és a playerThree változón keresztül is elérjük, míg a másikat csak a playerTwo változón keresztül
+            Player playerThree = playerOne;
+
+            // playerOne és playerThree hashCode-ja ugyanaz, mivel ugyanaz az objektum "van bennük"
+            Console.WriteLine("playerThree.GetHashCode(): " + playerThree.GetHashCode());
+
+            // true
+            Console.WriteLine("playerThree.Equals(playerOne): " + playerThree.Equals(playerOne));
+
+            // false
+            Console.WriteLine("playerThree.Equals(playerTwo): " + playerThree.Equals(playerTwo));
 
             Console.ReadLine();
         }
